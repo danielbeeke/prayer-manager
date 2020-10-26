@@ -1,0 +1,17 @@
+{
+  "name": "prayer-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "^2.15.1"
+  },
+  "dependencies": {
+    "uhtml": "^2.1.2"
+  }
+}
