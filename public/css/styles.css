@@ -1,0 +1,74 @@
+:root {
+  --gray: #ddd8d8;
+  --radius: 3px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language-code {
+  padding: 2px;
+}
+
+.language-code.translated {
+    background: green;
+    color: white;
+  }
+
+.directory-list {
+  padding: 40px;
+  list-style: none;
+}
+
+.directory {
+  cursor: pointer;
+  display: flex;
+  padding: 5px;
+  border-radius: 3px;
+  border-radius: var(--radius);
+  margin: 0;
+  background: #ddd8d8;
+  background: var(--gray);
+}
+
+.directory .button {
+    margin-left: auto;
+  }
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas: "left right";
+}
+
+.left {
+  grid-area: left;
+}
+
+.right {
+  grid-area: right;
+  width: 100%;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file {
+  display: flex;
+  padding: 10px;
+}
+
+.file-name {
+  margin-right: auto;
+}
