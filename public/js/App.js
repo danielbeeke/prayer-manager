@@ -97,9 +97,9 @@ class App {
     const possibleTranslations = ['en', 'nl', 'de']
 
     const files = [];
-    for await (const entry of this.handle.getEntries()) {
-      const isJsonLd = entry.name.substr(-7) === '.jsonld'
-      if (entry.isFile && isJsonLd) {
+    for await (const [name, entry] of this.handle.entries()) {
+      const isJsonLd = name.substr(-7) === '.jsonld'
+      if (entry.kind === 'file' && isJsonLd) {
         const file = await entry.getFile();
         const jsonLd = JSON.parse(await file.text())
 
@@ -184,7 +184,7 @@ class App {
           const text = JSON.stringify(event.detail, null, 2)
           const title = event.detail['prayer:title']
           const fileName = title + '.jsonld'
-          const newFileHandle = await this.handle.getFile(fileName, { create: true });
+          const newFileHandle = await this.handle.getFileHandle(fileName, { create: true });
           const writable = await newFileHandle.createWritable();
           await writable.write(text);
           await writable.close();
@@ -202,10 +202,8 @@ class App {
    * Shows the OS folder dialog.
    */
   async showFolderDialog () {
-    this.handle = await window.chooseFileSystemEntries({
-      type: 'open-directory',
-      readOnly: false,
-    })
+    this.handle = await window.showDirectoryPicker()
+    console.log(this.handle)
     await HandleStore.storeHandle(this.handle)
   }
 
