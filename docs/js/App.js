@@ -166,7 +166,8 @@ class App {
           form="https://rdf.danielbeeke.nl/prayer/prayer.form.ttl"
           selected-language=${this.language}
           i10n-languages='{"en": "English", "nl": "Nederlands"}'
-          ui-languages='{"nl": "Nederlands"}'>
+          ui-languages='{"nl": "Nederlands"}'
+          proxy="https://2i9izrkade.execute-api.eu-central-1.amazonaws.com/dev/?url=">
         </rdf-form>
       </div>
     `
@@ -190,7 +191,8 @@ class App {
           form="https://rdf.danielbeeke.nl/prayer/prayer.form.ttl"
           selected-language=${this.language}
           i10n-languages='{"en": "English", "nl": "Nederlands"}'
-          ui-languages='{"nl": "Nederlands"}'>
+          ui-languages='{"nl": "Nederlands"}'
+          proxy="https://2i9izrkade.execute-api.eu-central-1.amazonaws.com/dev/?url=">
         </rdf-form>
 
       </div>            
