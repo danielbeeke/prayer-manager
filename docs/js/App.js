@@ -163,7 +163,7 @@ class App {
             await writable.write(text);
             await writable.close();
           }}
-          form="http://rdf.danielbeeke.nl/prayer/prayer.form.ttl"
+          form="https://rdf.danielbeeke.nl/prayer/prayer.form.ttl"
           selected-language=${this.language}
           i10n-languages='{"en": "English", "nl": "Nederlands"}'
           ui-languages='{"nl": "Nederlands"}'>
@@ -187,7 +187,7 @@ class App {
             await writable.write(text);
             await writable.close();
           }}
-          form="http://rdf.danielbeeke.nl/prayer/prayer.form.ttl"
+          form="https://rdf.danielbeeke.nl/prayer/prayer.form.ttl"
           selected-language=${this.language}
           i10n-languages='{"en": "English", "nl": "Nederlands"}'
           ui-languages='{"nl": "Nederlands"}'>
