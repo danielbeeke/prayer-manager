@@ -1,4 +1,4 @@
-import {Hole} from 'uhtml';
+import {Hole} from './vendor/uhtml.js';
 
 class TranslatedText extends Hole {
   constructor(text, context) {

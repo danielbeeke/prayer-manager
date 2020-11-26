@@ -1,5 +1,5 @@
-import {Hole} from 'uhtml'
-import { icon } from '@fortawesome/fontawesome-svg-core'
+import {Hole} from './vendor/uhtml.js'
+import { icon } from './vendor/@fortawesome/fontawesome-svg-core.js'
 
 class FaIcon extends Hole {
   constructor(icon) {

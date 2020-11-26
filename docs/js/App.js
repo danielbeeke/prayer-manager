@@ -1,6 +1,6 @@
-import { html, render } from 'uhtml'
+import { html, render } from './vendor/uhtml.js'
 import { fa, valueToArray } from './Helpers.js'
-import { faFolderOpen, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faFolderOpen, faPlus, faTimes } from './vendor/@fortawesome/free-solid-svg-icons.js'
 import { HandleStore } from './HandleStore.js';
 import { I10n } from './i10n.js';
 
