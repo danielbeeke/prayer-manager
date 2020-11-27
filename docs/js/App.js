@@ -152,6 +152,8 @@ class App {
     const blob = new Blob([text], {type: 'octet/stream' })
     const blobUrl = window.URL.createObjectURL(blob);
 
+    console.log(text)
+
     return html.for(file)`
       ${await this.templateOpenedFolder()}
       <div class="main">
@@ -212,7 +214,7 @@ class App {
    * @returns {Promise<[]>}
    */
   async getFiles () {
-    const files = [];
+    let files = [];
     if (!this.handle) return files
 
     for await (const [name, entry] of this.handle.entries()) {
@@ -232,6 +234,13 @@ class App {
         })
       }
     }
+
+    files = files.sort((a, b) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    })
+
     return files
   }
 

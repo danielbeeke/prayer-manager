@@ -77,7 +77,7 @@ for (const category of data.Categories) {
         "form": "http://rdf.danielbeeke.nl/form/form-dev.ttl#",
         "prayerForm": "http://rdf.danielbeeke.nl/prayer/prayer.form.ttl#"
       },
-      "prayer:author": authors[prayer.Author] ? { '@id': authors[prayer.Author]} : prayer.Author,
+      "prayer:author": authors[prayer.Author] ? { '@id': authors[prayer.Author]} : { '@value': prayer.Author},
       "prayer:category": "http://rdf.danielbeeke.nl/prayer/prayer-dev.ttl#" + categoryMapping[category.Title],
       "prayer:content": prayer.Content,
       "prayer:title": prayer.Title
