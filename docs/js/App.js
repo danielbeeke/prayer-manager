@@ -4,6 +4,15 @@ import { faFolderOpen, faPlus, faTimes } from './vendor/@fortawesome/free-solid-
 import { HandleStore } from './HandleStore.js';
 import { I10n } from './i10n.js';
 
+Sentry.init({
+  dsn: 'https://4b49754719a84c569f9af8e17c031e55@o483393.ingest.sentry.io/5535149',
+
+  // We recommend adjusting this value in production, or using tracesSampler
+  // for finer control
+  tracesSampleRate: 1.0,
+});
+
+
 class App {
   constructor() {
     this.appElement = document.querySelector('#app')
@@ -151,8 +160,6 @@ class App {
     const text = await file.text()
     const blob = new Blob([text], {type: 'octet/stream' })
     const blobUrl = window.URL.createObjectURL(blob);
-
-    console.log(text)
 
     return html.for(file)`
       ${await this.templateOpenedFolder()}
