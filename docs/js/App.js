@@ -3,9 +3,14 @@ import { fa, valueToArray } from './Helpers.js'
 import { faFolderOpen, faPlus, faTimes } from './vendor/@fortawesome/free-solid-svg-icons.js'
 import { HandleStore } from './HandleStore.js';
 import { I10n } from './i10n.js';
+import * as Sentry from './vendor/@sentry/browser.js';
+import { Integrations } from './vendor/@sentry/tracing.js';
 
 Sentry.init({
   dsn: 'https://4b49754719a84c569f9af8e17c031e55@o483393.ingest.sentry.io/5535149',
+  integrations: [
+    new Integrations.BrowserTracing(),
+  ],
 
   // We recommend adjusting this value in production, or using tracesSampler
   // for finer control
